@@ -3,6 +3,8 @@
 Essensplanung für die Woche mit Zufallsgenerator, Rezepten und sortierter Einkaufsliste.
 Alle Daten werden lokal auf dem jeweiligen Gerät gespeichert (im Browser).
 
+**👉 App öffnen & installieren: https://miracleblood.github.io/winkelfall-auf-jagd/**
+
 ## Am PC starten
 
 ```
