@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Winkelfall auf Jagd</title>
+  <meta name="theme-color" content="#2f6b4f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Winkelfall">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="hero">
+      <img src="icon.svg" alt="" class="logo">
+      <div class="hero-text">
+        <h1>Winkelfall auf Jagd</h1>
+        <p class="subtitle" id="subtitle">Essensplan &amp; Einkaufsliste</p>
+      </div>
+      <span class="sync-pill" id="syncState" hidden></span>
+    </div>
+  </header>
+
+  <main id="view"></main>
+
+  <nav class="tabbar">
+    <button data-tab="kalender" class="active"><span class="ti">📅</span><span>Kalender</span></button>
+    <button data-tab="rezepte"><span class="ti">📖</span><span>Rezepte</span></button>
+    <button data-tab="einkauf"><span class="ti">🛒</span><span>Einkauf</span><span class="badge" id="shopBadge" hidden></span></button>
+  </nav>
+
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden>
+    <div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <!-- Feier, wenn alles eingekauft ist -->
+  <div class="celebrate" id="celebrate" hidden>
+    <canvas id="confetti"></canvas>
+    <div class="celebrate-card" role="dialog" aria-modal="true" aria-labelledby="celebrateTitle">
+      <div class="chick-stage">
+        <svg class="chick" viewBox="0 0 200 200" aria-hidden="true">
+          <g class="chick-body">
+            <!-- Füße -->
+            <g class="feet" stroke="#f08a24" stroke-width="6" stroke-linecap="round" fill="none">
+              <path d="M82,160 L80,178 M80,178 L70,184 M80,178 L82,188 M80,178 L90,184"/>
+              <path d="M118,160 L120,178 M120,178 L110,184 M120,178 L118,188 M120,178 L130,184"/>
+            </g>
+            <!-- Körper -->
+            <ellipse cx="100" cy="122" rx="56" ry="48" fill="#ffd23f"/>
+            <ellipse cx="100" cy="134" rx="34" ry="28" fill="#ffe680"/>
+            <!-- Flügel -->
+            <path class="wing wing-l" d="M48,118 Q22,100 30,82 Q50,96 60,112 Z" fill="#f7bf1e"/>
+            <path class="wing wing-r" d="M152,118 Q178,100 170,82 Q150,96 140,112 Z" fill="#f7bf1e"/>
+            <!-- Kopf -->
+            <circle cx="100" cy="70" r="38" fill="#ffd23f"/>
+            <!-- Federbüschel -->
+            <path d="M96,34 Q90,18 100,14 Q98,24 104,32 Q108,20 116,22 Q108,28 106,36 Z" fill="#f7bf1e"/>
+            <!-- Augen (fröhlich zugekniffen) -->
+            <path d="M80,66 Q86,58 92,66" stroke="#3b2a1a" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path d="M108,66 Q114,58 120,66" stroke="#3b2a1a" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <!-- Bäckchen -->
+            <ellipse cx="76" cy="80" rx="8" ry="5" fill="#ff9f9f" opacity=".7"/>
+            <ellipse cx="124" cy="80" rx="8" ry="5" fill="#ff9f9f" opacity=".7"/>
+            <!-- Schnabel offen -->
+            <path d="M88,78 L112,78 L100,92 Z" fill="#f08a24"/>
+            <path d="M92,80 L108,80 L100,87 Z" fill="#c4581a"/>
+          </g>
+        </svg>
+        <div class="chick-shadow"></div>
+      </div>
+      <h2 id="celebrateTitle">Einkauf erledigt!</h2>
+      <p>Alles im Wagen – die Jagd war erfolgreich 🎉</p>
+      <button class="btn primary celebrate-close" data-act="close-celebrate">Schließen</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

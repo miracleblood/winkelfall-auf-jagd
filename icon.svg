@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#2f6b3f"/>
+      <stop offset="0.6" stop-color="#173f25"/>
+      <stop offset="1" stop-color="#0b2214"/>
+    </radialGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d98b"/>
+      <stop offset="1" stop-color="#d49a3a"/>
+    </linearGradient>
+    <!-- Revolver, Griff am Ursprung, Lauf zeigt nach rechts -->
+    <g id="revolver">
+      <rect x="10" y="-9" width="62" height="11" rx="3" fill="#d8dfda"/>
+      <rect x="68" y="-13" width="5" height="6" fill="#d8dfda"/>
+      <rect x="-4" y="-15" width="26" height="22" rx="6" fill="#b9c4bd"/>
+      <line x1="0" y1="-8" x2="18" y2="-8" stroke="#7f8d85" stroke-width="2"/>
+      <line x1="0" y1="0" x2="18" y2="0" stroke="#7f8d85" stroke-width="2"/>
+      <path d="M-6,-14 L-16,-24 L-10,-26 L0,-15 Z" fill="#b9c4bd"/>
+      <path d="M2,7 Q8,22 20,10" fill="none" stroke="#b9c4bd" stroke-width="3.5"/>
+      <path d="M-6,-6 L-30,32 Q-26,42 -12,40 L6,4 Z" fill="#8a5a2b"/>
+      <path d="M-14,8 L-22,26" stroke="#5e3b1a" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <!-- Person von hinten -->
+    <g id="person">
+      <!-- Beine -->
+      <path d="M-40,330 L-44,470 L-10,470 L-4,360 L4,360 L10,470 L44,470 L40,330 Z" fill="#081a0e"/>
+      <!-- Stiefel -->
+      <path d="M-48,462 L-8,462 L-6,478 L-52,478 Z M8,462 L48,462 L52,478 L6,478 Z" fill="#3a2414"/>
+      <!-- Oberkörper -->
+      <path d="M-64,218 Q-70,212 -58,206 L-22,196 L22,196 L58,206 Q70,212 64,218 L48,336 L-48,336 Z" fill="#0b2213"/>
+      <!-- Gürtel -->
+      <rect x="-49" y="322" width="98" height="12" fill="#3a2414"/>
+      <rect x="-8" y="321" width="16" height="14" rx="2" fill="#d9b45a"/>
+      <!-- Hals + Kopf -->
+      <rect x="-12" y="176" width="24" height="26" fill="#0b2213"/>
+      <circle cx="0" cy="160" r="30" fill="#0b2213"/>
+      <!-- Hut -->
+      <ellipse cx="0" cy="146" rx="62" ry="13" fill="#3a2414"/>
+      <path d="M-32,146 Q-34,104 -14,100 Q0,108 14,100 Q34,104 32,146 Z" fill="#4a2f1a"/>
+      <rect x="-32" y="134" width="64" height="8" fill="#d9b45a"/>
+      <!-- Arme nach hinten auf den Rücken -->
+      <path d="M-56,220 L-70,290 L-18,318" fill="none" stroke="#123020" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M56,220 L70,290 L18,318" fill="none" stroke="#123020" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Revolver in den Händen -->
+      <use href="#revolver" transform="translate(-16,318) rotate(115) scale(0.85)"/>
+      <use href="#revolver" transform="translate(16,318) scale(-1,1) rotate(115) scale(0.85)"/>
+      <!-- Hände -->
+      <circle cx="-16" cy="318" r="13" fill="#c99a6e"/>
+      <circle cx="16" cy="318" r="13" fill="#c99a6e"/>
+    </g>
+  </defs>
+  <rect width="512" height="512" rx="110" fill="url(#bg)"/>
+  <circle cx="256" cy="230" r="150" fill="url(#sun)" opacity="0.9"/>
+  <path d="M0,400 Q130,370 256,392 T512,384 L512,512 L0,512 Z" fill="#0b2214"/>
+  <use href="#person" transform="translate(166,0) scale(1)"/>
+  <use href="#person" transform="translate(346,0) scale(1)"/>
+</svg>
